@@ -1,6 +1,7 @@
 name: Trips CICD
 
 env:
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
   registry: docker.pkg.github.com
   repository: hattan/openhack-devops-team-gh/api-trips
   docker_path: apis/trips

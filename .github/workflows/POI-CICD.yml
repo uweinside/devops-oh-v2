@@ -12,6 +12,7 @@ env:
   build_name: POI
 
 on:
+  workflow_dispatch:
   push:
     branches: [ master ]
     paths: 

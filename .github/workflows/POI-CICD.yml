@@ -2,6 +2,7 @@ name: POI CICD
 
 env:
   poi_path: apis/poi/**
+  docker_path: apis/poi/web
   registry: openhack6fq321v2acr.azurecr.io
   repository: devopsoh/api-poi
   build_name: POI

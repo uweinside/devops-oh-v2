@@ -12,6 +12,7 @@ env:
   webv_path: apis/user-java/webvalidate
 
 on:
+  workflow_dispatch:
   push:
     branches: [ master ]
     paths: 

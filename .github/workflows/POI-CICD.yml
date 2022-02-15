@@ -54,7 +54,7 @@ jobs:
         flag-name: Unit
 
   docker_build_and_push:
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     needs: build_and_test
     steps:     

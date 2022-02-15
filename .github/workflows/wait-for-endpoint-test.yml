@@ -21,4 +21,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: wait-for-endpoint.sh https://www.microsoft.com -t 5
+        run: scripts/wait-for-endpoint.sh https://www.microsoft.com -t 5

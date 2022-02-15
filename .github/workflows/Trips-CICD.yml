@@ -44,7 +44,7 @@ jobs:
       run: go get
 
     - name: Run Unit Tests
-      run: go test ./tests
+      run: go test ./tripsgo -run Unit
 
     - uses: actions/github-script@0.9.0
       if: failure()

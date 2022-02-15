@@ -6,6 +6,7 @@ env:
   registry: openhack6fq321v2acr.azurecr.io
   repository: devopsoh/api-poi
   webapp_name: openhack6fq321v2poi
+  staging-url: https://openhack6fq321v2poi-staging.azurewebsites.net/api/healthcheck/poi
   build_name: POI
 
 on:
@@ -84,6 +85,9 @@ jobs:
     - name: Azure WebApp
       uses: Azure/webapps-deploy@v2
       with:
-        app-name: ${{ env.webapp_name }}
+        app-name: ${{env.webapp_name}}
         slot-name: staging
-        images: ${{ env.registry }}/${{ env.repository }}:${{github.run_number}}
+        images: ${{env.registry}}/${{env.repository}}:${{github.run_number}}
+        
+    - name: Verify staging slot
+      run: scripts/wait-for-endpoint.sh ${{env.staging-url}} -t 30

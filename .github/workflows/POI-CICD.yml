@@ -77,6 +77,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: docker_build_and_push
     steps:
+    - uses: actions/checkout@v2 
+    
     - name: Azure authentication
       uses: azure/login@v1
       with:
@@ -88,6 +90,6 @@ jobs:
         app-name: ${{env.webapp_name}}
         slot-name: staging
         images: ${{env.registry}}/${{env.repository}}:${{github.run_number}}
-        
+            
     - name: Verify staging slot
       run: scripts/wait-for-endpoint.sh ${{env.staging-url}} -t 30

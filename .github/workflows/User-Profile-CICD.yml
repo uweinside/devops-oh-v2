@@ -12,6 +12,7 @@ env:
   webv_path: apis/userprofile/webvalidate
 
 on:
+  workflow_dispatch:
   push:
     branches: [ master ]
     paths: 

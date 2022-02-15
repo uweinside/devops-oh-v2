@@ -73,7 +73,8 @@ jobs:
       
     - uses: azure/webapps-deploy@v2
       with:
-        app-name: $webapp_name
+        app-name: '$webapp_name'
+        slot-name: staging
         publish-profile: ${{secrets.WEBAPP_PROFILE}}
         images: $registry/$repository:${{github.run_number}}
 

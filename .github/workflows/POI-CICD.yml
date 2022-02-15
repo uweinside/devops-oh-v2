@@ -5,6 +5,7 @@ env:
   docker_path: apis/poi/web
   registry: openhack6fq321v2acr.azurecr.io
   repository: devopsoh/api-poi
+  webapp_name: openhack6fq321v2poi
   build_name: POI
 
 on:
@@ -69,6 +70,12 @@ jobs:
 
     - name: Docker Push
       run: docker push $registry/$repository:${{github.run_number}}  
+      
+    - uses: azure/webapps-deploy@v2
+      with:
+        app-name: $webapp_name
+        publish-profile: ${{ secrets.WEBAPP_PROFILE }}
+        images: $registry/$repository:${{github.run_number}}
 
     - uses: actions/github-script@0.9.0
       if: failure()

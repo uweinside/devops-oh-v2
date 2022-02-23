@@ -6,6 +6,7 @@ env:
   registry: openhack6fq321v2acr.azurecr.io
   repository: devopsoh/api-poi
   webapp_name: openhack6fq321v2poi
+  resource_group: openhack6fq321v2rg
   staging-url: https://openhack6fq321v2poi-staging.azurewebsites.net/api/healthcheck/poi
   build_name: POI
 

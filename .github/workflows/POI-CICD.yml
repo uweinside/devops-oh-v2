@@ -95,7 +95,7 @@ jobs:
       run: scripts/wait-for-endpoint.sh ${{env.staging-url}} -t 30
 
   swap_slots:
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     needs: deploy_staging
     steps:
